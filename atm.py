@@ -32,9 +32,7 @@ def split_amount(amount: int, banknotes=[5, 2, 1]):
     initial_amount = amount
     for i in banknotes:
         while amount >= i:
-            if i != min_banknote and\
-            amount - i < min_banknote and\
-            amount - i > 0:
+            if i != min_banknote and 0 < amount - i < min_banknote:
                 break
             banknotes_list.append(i)
             amount -= i
